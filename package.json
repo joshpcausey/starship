@@ -1,0 +1,24 @@
+{
+  "name": "starship",
+  "version": "2.2.0",
+  "description": "A backend for bullsofbrass content management",
+  "main": "handler.js",
+  "scripts": {
+    "test": "serverless-bundle test"
+  },
+  "author": "Joshua Causey",
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshpcausey/starship"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.834.0",
+    "serverless-bundle": "3.2.0",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-offline": "^5.3.3"
+  },
+  "dependencies": {
+    "uuid": "7.0.3"
+  }
+}
