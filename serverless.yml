@@ -3,6 +3,9 @@ service: articles
 package:
   individually: true
 
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
+
 plugins:
   - serverless-bundle
   - serverless-offline
@@ -36,6 +39,7 @@ functions:
       - http:
           path: articles
           method: post
+          cors: true
           authorizer: aws_iam
 
   get:
@@ -44,6 +48,7 @@ functions:
       - http:
           path: articles/{id}
           method: get
+          cors: true
           authorizer: aws_iam
 
   list:
@@ -52,6 +57,7 @@ functions:
       - http:
           path: articles
           method: get
+          cors: true
           authorizer: aws_iam
 
   update:
@@ -60,6 +66,7 @@ functions:
       - http:
           path: articles/{id}
           method: put
+          cors: true
           authorizer: aws_iam
 
   delete:
@@ -68,4 +75,5 @@ functions:
       - http:
           path: articles/{id}
           method: delete
+          cors: true
           authorizer: aws_iam
