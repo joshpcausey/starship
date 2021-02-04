@@ -19,6 +19,7 @@ provider:
 
   environment:
     tableName: articles
+    stripeSecretKey: ${env:STRIPE_SECRET_KEY}
 
   iamRoleStatements:
     - Effect: Allow
@@ -76,4 +77,12 @@ functions:
           path: articles/{id}
           method: delete
           cors: true
+          authorizer: aws_iam
+
+  billing:
+    handler: billing.main
+    events:
+      - http:
+          path: billing
+          method: post
           authorizer: aws_iam
